@@ -49,7 +49,7 @@ LOCALE_PATHS = [str(BASE_DIR / "locale")]
 DATABASES = {
     "default": env.db(
         "DATABASE_URL",
-        default="postgres:///djangogram",
+        default="postgres://postgres:12341234@localhost:5432/djangogram",
     ),
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
@@ -87,6 +87,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "djangogram.users",
+    "djangogram.posts",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
