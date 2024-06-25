@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
-from .forms import SingUpForm
+from .forms import SignUpForm
 
 def main(request):
     if request.method == "GET":
@@ -21,11 +21,11 @@ def main(request):
 
 def signup(request):
     if request.method == "GET":
-        form = SingUpForm()
+        form = SignUpForm()
 
         return render(request,'users/signup.html', {'form':form})
     elif request.method == "POST":
-        form = SingUpForm(request.POST)
+        form = SignUpForm(request.POST)
 
         if form.is_valid():
             form.save()

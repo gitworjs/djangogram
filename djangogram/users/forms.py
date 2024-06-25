@@ -40,7 +40,7 @@ class UserSocialSignupForm(SocialSignupForm):
     See UserSignupForm otherwise.
     """
 
-class SingUpForm(django_forms.ModelForm):
+class SignUpForm(django_forms.ModelForm):
     class Meta:
         model = User
         fields = ['email','name','username', 'password']
